@@ -57,6 +57,7 @@ parallel_groups = []
 for brew_file in args.file:
     with open(brew_file, 'r') as f:
         apps = f.readlines()
+        apps = filter(lambda x: not x.startswith('#'), apps)
         apps = map(lambda x: x.replace('\n', '').strip(), apps)
         apps = filter(lambda x: len(x) > 0, apps)
         parallel_groups.append(apps)
