@@ -9,12 +9,13 @@ Design for speed up brew installation, but also helpful in other situations mayb
 Assume that we have a text file with brew install commands, whichi named `./brew1`.
 
 ```bash
-# ./brew1
+#! /bin/bash
+# file: brew1
 brew cask install evernote
 brew cask install inboard
 brew cask install macvim
 brew cask install macdown
-brew cask install qq
+# brew cask install qq
 brew cask install qq
 brew cask install qq
 brew cask install qq
@@ -23,6 +24,8 @@ brew cask install qq
 brew cask install qq
 brew cask install qq
 ```
+
+We can comment lines using `#` just like shell scripts.
 
 Then we run this installation in parallel with tmux-parallel.
 
